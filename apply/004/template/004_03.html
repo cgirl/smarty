@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	{literal}table{background:blue;}{/literal}
+</style>
+<body>
+	<pre>
+	{literal}
+		-如果smarty的标签的定界符{}与css的{}块冲突了，可以用个如下两种方法来解决：
+		-1.修改smarty的默认定界符，如改成{> <};
+		-2.也可以用{literal}{/literal}标签，来告诉smarty，此处照常输出，不用解析
+		-  literal在英语里，是“字面值，原义”的意思
+	{/literal}
+	</pre>
+	<table>
+		<!-- 
+		方法一：真正执行时，没有{literal}和{/literal}标志
+		<tr><td>姓名：</td><td>{literal}{>$gy[0]<}{/literal}</td></tr>
+		<tr><td>年龄：</td><td>{literal}{>$gy['age']<}{/literal}</td></tr>
+		<tr><td>兵器：</td><td>{literal}{>$gy['weapon']<}{/literal}</td></tr>
+		-->
+		<!-- 方法二 -->
+		<tr><td>姓名：</td><td>{$gy[0]}</td></tr>
+		<tr><td>年龄：</td><td>{$gy['age']}</td></tr>
+		<tr><td>兵器：</td><td>{$gy['weapon']}</td></tr>
+	</table>
+</body>
+</html>
