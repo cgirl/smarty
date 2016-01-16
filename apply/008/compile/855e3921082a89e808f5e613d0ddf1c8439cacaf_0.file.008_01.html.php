@@ -1,16 +1,16 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-01-16 22:05:29
-  from "F:\web\www\smarty\apply\007\template\007_01.html" */
+/* Smarty version 3.1.29, created on 2016-01-16 22:25:27
+  from "F:\web\www\smarty\apply\008\template\008_01.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_569a4e2952f5c4_71819251',
+  'unifunc' => 'content_569a52d7d5aa50_54563047',
   'file_dependency' => 
   array (
-    '2447025057a3266b2523e779d1625938e78b70ce' => 
+    '855e3921082a89e808f5e613d0ddf1c8439cacaf' => 
     array (
-      0 => 'F:\\web\\www\\smarty\\apply\\007\\template\\007_01.html',
+      0 => 'F:\\web\\www\\smarty\\apply\\008\\template\\008_01.html',
       1 => 1452952852,
       2 => 'file',
     ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_569a4e2952f5c4_71819251 ($_smarty_tpl) {
+function content_569a52d7d5aa50_54563047 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
