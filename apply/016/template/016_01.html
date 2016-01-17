@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>页面缓存</title>
+</head>
+<body>
+	{literal}
+	<pre>
+		smarty在页面缓存的情况下，可以设置部门内容不缓存，这比较有用，
+		因为页面的某部分，比如随机广告，股票信息，时间等等，这些就适宜缓存起来
+			
+		在smarty中，想控制局部不缓存，方法非常多：
+		1.在标签中控制该标签不缓存 {$标签 nocache}
+		2.控制一片标签不缓存{nocache}{/nocache}
+		3.在php中，赋值时就控制不缓存（smarty3新增）
+		
+		注意：不存换的标签，要保证总能从php处获得数据
+	</pre>
+	{/literal}
+	<h2>当前时间{$time1|date_format:"%Y-%m-%d %H:%M:%S"}</h2>
+	<h2>当前时间{$time1|date_format:"%Y-%m-%d %H:%M:%S" nocache}</h2>
+	{nocache}
+	<h2>当前时间{$time1|date_format:"%Y-%m-%d %H:%M:%S"}</h2>
+	<h2>当前时间{$time1|date_format:"%Y-%m-%d %H:%M:%S"}</h2>
+	{/nocache}
+	<h2>当前时间{$time2|date_format:"%Y-%m-%d %H:%M:%S"}</h2>
+	
+	<p>{insert name="welcome" age=28}</p>
+	<table border="1">
+		<tr><th>序号</th><th>商品名</th><th>商品价格</th></tr>
+		{foreach $goods as $k=>$v}
+		<tr>
+			<td>{$v@iteration}</td>
+			<td>{$v.goods_name}</td>
+			<td>{$v.shop_price}</td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>
