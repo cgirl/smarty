@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-01-17 15:43:04
+/* Smarty version 3.1.29, created on 2016-01-17 15:58:28
   from "F:\web\www\smarty\apply\013\template\013_01.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_569b46087bef01_96082787',
+  'unifunc' => 'content_569b49a4d09e09_39044006',
   'file_dependency' => 
   array (
     'c9ff806dc5d8aa5bea16472b3b19b3abe9333343' => 
     array (
       0 => 'F:\\web\\www\\smarty\\apply\\013\\template\\013_01.html',
-      1 => 1453016580,
+      1 => 1453016726,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_569b46087bef01_96082787 ($_smarty_tpl) {
+function content_569b49a4d09e09_39044006 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,7 +63,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_g'] = $__section_g_0_saved;
 }
 ?>
 	</table>
-	
+	注意：标签进行自增运算时，不支持前++
 	<?php
 while ($_smarty_tpl->tpl_vars['age']->value < 18) {?>
 		<?php echo $_smarty_tpl->tpl_vars['age']->value++;?>
