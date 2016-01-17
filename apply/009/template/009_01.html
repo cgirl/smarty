@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>标签的数学运算</title>
+</head>
+<body>
+	<p>标签是可以参与运算的，但是不推荐</p>
+	<p>{$age+30}</p>
+	<p>小伙的真实年龄是：{$age}</p>
+	<p>他最佳配偶年纪是：{$age-$sub}</p>
+	<p>夫妻年纪的乘积为：{$age*($age-$sub)}</p>
+	<p>
+		-{30+$age}这种写法在smarty2.6中是不支持的，即运算的时候，$标签要放在前面
+		-在smarty3里，可以把数值写在前面
+	</p>
+</body>
+</html>
