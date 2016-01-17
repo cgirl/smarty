@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模板for循环</title>
+</head>
+<body>
+	<pre>
+		{for $i=$start to $end}{/for}
+		原理是，$i的初始值为$start，$i不断!!!《增加》!!!，知道等于$end
+	</pre>
+		{for $i=$start to $end}
+			{$i}&nbsp;
+			{if $i%3==0}
+				<br />
+			{/if}
+		{/for}
+	<pre>
+		接下来，打印1-100之间的所有奇数：
+		常规想法：用%2==1来判断并打印。
+		但是我们可以利用for循环的步长属性来控制。
+		步长即由小到大的过程中每一步的增长幅度，
+		1,3,5,7这就是每一步递增数字2
+	</pre>
+	<p>
+		{for $i=$start to 100 step 2}
+			{$i}&nbsp;{if $i@iteration%3==0}<br />{/if}
+		{/for}
+		<h2>这次循环将要跑{$i@total}次</h2>
+	</p>
+	<pre>
+		在for循环中，已上面的for循环为例，$i@total是获取这次循环的总次数
+		再看源码，$i@iteration是当前的循环次数，比如，第3次循环；
+		
+		问题：你能否把第1次循环和最后一次循环中的数字，变成红色？
+		提示：看编译中间文件，有个first，last，照葫芦画瓢试试。
+	</pre>
+</body>
+</html>
