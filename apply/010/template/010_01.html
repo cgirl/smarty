@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模板if esle逻辑判断</title>
+</head>
+<body>
+	<p>你给女友买了个包</p>
+	<p>
+		她到底是喜欢还是不喜欢呢？
+		{if $price > 10000}
+			当然喜欢
+		{else}
+			我才不喜欢
+		{/if}
+	</p>
+	<p>
+		{if $price > 5000}
+			老婆，我给你买了lv包
+		{/if}
+	</p>
+	<p>
+		{if $height == 180}
+			{$height}是完美身材
+		{/if}
+	</p>
+	<p>
+		{if $house%3==0}
+			你的房子面积是3的整数倍
+		{else}
+			你的房子面积不是3的整数倍
+		{/if}
+	</p>
+	<p>
+		思考：在模板里如何写成一个表格的隔行变色？
+		答：模板既能数学运算，又能 逻辑判断，可以对2取模来判断，并设置背景色
+	</p>
+	<p>
+		从地址栏上传值，判断是星期几？
+		如果是0,7，则为周日，如果是6则为周六，其余判断为工作日
+		<br>
+		{if $smarty.get.today == 0 || $smarty.get.today == 7}
+			今天是周日
+		{else if $smarty.get.today == 6}
+			今天是周六
+		{else}
+			今天是工作日
+		{/if}
+	</p>
+</body>
+</html>
