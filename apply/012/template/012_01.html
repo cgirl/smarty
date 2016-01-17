@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>模板for循环</title>
+</head>
+<body>
+	{literal}
+		<h2>foreach是smarty中非常重要的一个循环结构，请认真练习</h2>
+		foreach循环数组的典型写法
+		{foreach from=$source key=$key item=$item}{/foreach}
+		
+		如何理解foreach呢？
+		答：from是来自的意思，即循环$source这个变量
+		
+		从头到尾，挨个的把$source的每一个单元的“键”和“值”拿出来，分别给$key,$item
+		不断变化，直到循环结束
+	{/literal}
+	<h2>布尔商城商品列表</h2>
+	<table border="1">
+		<tr><th>序号</th><th>商品名</th><th>商品价格</th></tr>
+		<!-- 这是smarty2的写法 -->
+		{foreach from=$goods key=k item=g} 
+		<tr><td>{$k}</td><td>{$g.goods_name}</td><td>{$g.shop_price}</td></tr>
+		{/foreach}
+	</table>
+	
+	<table border="1">
+		<tr><th>序号</th><th>商品名</th><th>商品价格</th></tr>
+		<!-- 这是smarty3的写法，建议中smarty3写法 -->
+		{foreach $goods as $k=>$g} 
+		<tr><td>{$k}</td><td>{$g.goods_name}</td><td>{$g.shop_price}</td></tr>
+		{/foreach}
+	</table>
+	
+	<h2>用iteration来实现隔行变色</h2>
+	<table border="1">
+		<tr><th>序号</th><th>商品名</th><th>商品价格</th></tr>
+		<!-- 这是smarty2的写法 -->
+		{foreach $goods as $k=>$g} 
+		<tr {if $g@iteration%2==0} bgcolor="#999" {/if}>
+			<td>{$g@iteration}</td>
+			<td>{$g.goods_name}</td>
+			<td>{$g.shop_price}</td>
+		</tr>
+		{/foreach}
+	</table>
+	
+	<h2>
+		用@first来控制首行，@first是一个布尔值，<br>
+		当第一次循环时，其值为真，否则其值为假<br>
+		@last类推
+	</h2>
+	<table border="1">
+		<tr><th>序号</th><th>商品名</th><th>商品价格</th></tr>
+		<!-- 这是smarty2的写法 -->
+		{foreach $goods as $k=>$g} 
+		<tr {if $g@first} bgcolor="#ddd" {elseif $g@last} bgcolor="pink"{/if}>
+			<td>{$g@iteration}</td>
+			<td>{$g.goods_name}</td>
+			<td>{$g.shop_price}</td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>
