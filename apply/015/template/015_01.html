@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>页面缓存</title>
+</head>
+<body>
+	{literal}
+
+	{/literal}
+	<h2>当前时间{$time1|date_format:"%Y-%m-%d %H:%M:%S"}</h2>
+	<table border="1">
+		<tr><th>序号</th><th>商品名</th><th>商品价格</th></tr>
+		{foreach $goods as $k=>$v}
+		<tr>
+			<td>{$v@iteration}</td>
+			<td>{$v.goods_name}</td>
+			<td>{$v.shop_price}</td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>
